@@ -1,5 +1,5 @@
 module TableStucture
-  class TablesController < ApplicationController
+  class TablesController < ::ApplicationController
 
     def index
       @tables = ActiveRecord::Base.connection.tables
