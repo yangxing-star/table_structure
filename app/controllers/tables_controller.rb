@@ -1,7 +1,9 @@
-class TablesController < Config.parent_controller.constantize
+module TableStucture
+  class TablesController < ApplicationController
 
-  def index
-    @tables = ActiveRecord::Base.connection.tables
+    def index
+      @tables = ActiveRecord::Base.connection.tables
+    end
+
   end
-
 end
