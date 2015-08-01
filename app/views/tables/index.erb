@@ -1,0 +1,31 @@
+<style type="text/css">
+  table {border-collapse:collapse;border-spacing:0;border-left:1px solid #888;border-top:1px solid #888;background:#efefef;}
+  th, td {border-right:1px solid #888;border-bottom:1px solid #888;padding:5px 15px;}
+  th {font-weight:bold;background:#ccc;}
+</style>
+<div>
+  <% @tables.each do |table| %>    
+    <h3>表名: <%= table %> </h3>
+
+    <table >
+      <thead>
+        <td>字段名</td>
+        <td>类型</td>
+        <td>NULL</td>
+        <td>默认值</td>
+        <td>备注</td>
+      </thead>
+      <tbody>
+        <% ActiveRecord::Base.connection.execute("SHOW FULL COLUMNS FROM `#{table}`").each do |row| %>
+          <tr>
+            <td><%= row[0] %></td>
+            <td><%= row[1] %></td>
+            <td><%= row[3] %></td>
+            <td><%= row[5] %></td>
+            <td><%= row[8] %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <% end %>
+</div>
