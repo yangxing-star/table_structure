@@ -1,5 +1,3 @@
 module TableStructure
-  class Engine < Rails::Engine
-    isolate_namespace TableStructure
-  end
+  class Engine < Rails::Engine; end
 end
