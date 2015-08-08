@@ -1,9 +1,7 @@
-module TableStucture
-  class TablesController < ::ApplicationController
+class TableStucture::TablesController < ::ApplicationController
 
-    def index
-      @tables = ActiveRecord::Base.connection.tables
-    end
-
+  def index
+    @tables = ActiveRecord::Base.connection.tables
   end
+
 end
