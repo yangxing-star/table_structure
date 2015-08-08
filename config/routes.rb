@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'tables' => 'table_structure/tables#index'
+  get 'tables' => 'tables#index'
 
 end
