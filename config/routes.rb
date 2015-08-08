@@ -1,5 +1,3 @@
-Rails.application.routes.draw do
-
+TableStructure::Engine.routes.draw do
   get '/tables', to: 'table_structure/tables#index'
-
 end
